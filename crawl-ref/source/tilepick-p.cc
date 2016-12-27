@@ -630,6 +630,8 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
         return TILEP_BASE_FORMICID;
     case SP_VINE_STALKER:
         return TILEP_BASE_VINE_STALKER;
+    case SP_ANGEL:
+        return TILEP_MONS_ANGEL;
     default:
         return TILEP_BASE_HUMAN;
     }

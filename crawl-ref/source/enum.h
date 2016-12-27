@@ -3656,6 +3656,9 @@ enum mutation_type
     MUT_TALONS,         // feet
     MUT_TENTACLE_SPIKE, // Octopode only.
 
+    // mine
+    MUT_HOLY_RADIANCE,
+
     // scales
     MUT_DISTORTION_FIELD,
     MUT_ICY_BLUE_SCALES,
@@ -4255,6 +4258,7 @@ enum species_type
     SP_GARGOYLE,
     SP_FORMICID,
     SP_VINE_STALKER,
+    SP_ANGEL,
     NUM_SPECIES,
 
     SP_UNKNOWN  = 100,

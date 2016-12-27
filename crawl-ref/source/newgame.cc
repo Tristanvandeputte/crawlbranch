@@ -175,7 +175,7 @@ static const species_type species_order[] =
     // mostly human shape but made of a strange substance
     SP_VINE_STALKER,
     // celestial species
-    SP_DEMIGOD,        SP_DEMONSPAWN,
+    SP_DEMIGOD,        SP_DEMONSPAWN,   SP_ANGEL,
     // undead species
     SP_MUMMY,          SP_GHOUL,
     SP_VAMPIRE,

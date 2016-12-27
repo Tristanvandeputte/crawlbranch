@@ -2976,6 +2976,9 @@ bool player_can_join_god(god_type which_god)
     if (you.species == SP_DEMIGOD)
         return false;
 
+    if (is_evil_god(which_god) && you.species == SP_ANGEL)
+        return false;
+
     if (is_good_god(which_god) && you.undead_or_demonic())
         return false;
 

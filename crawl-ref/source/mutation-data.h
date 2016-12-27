@@ -32,6 +32,22 @@ static const mutation_def mut_data[] =
    "Your skin feels delicate."},
 },
 
+{ MUT_HOLY_RADIANCE, 0, 3, mutflag::GOOD, true,
+  "blessed",
+
+  {"You emit a faint light (EV +1)",
+   "You emit a strong light (EV +2)",
+   "You shine with holy brilliance (EV +5, SInv)"},
+
+  {"You start to emit a faint light.",
+   "Your light increases in intensity.",
+   "You are blessed by the gods!"},
+
+  {"You lose your connection to the high heavens...",
+   "Your feel your light fading...",
+   "The gods frown upon you."},
+},
+
 { MUT_STRONG, 7, 2, mutflag::GOOD, false,
   "strong",
 

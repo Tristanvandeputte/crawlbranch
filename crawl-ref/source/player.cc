@@ -2184,6 +2184,8 @@ static int _player_evasion_bonuses()
 
     // mutations
     evbonus += player_mutation_level(MUT_GELATINOUS_BODY);
+    if(player_mutation_level(MUT_HOLY_RADIANCE)>0)
+        evbonus += (((player_mutation_level(MUT_HOLY_RADIANCE)-1)*2)+1);
 
     if (player_mutation_level(MUT_DISTORTION_FIELD))
         evbonus += player_mutation_level(MUT_DISTORTION_FIELD) + 1;
@@ -7104,6 +7106,9 @@ bool player::innate_sinv() const
 
     // antennae give sInvis at 3
     if (player_mutation_level(MUT_ANTENNAE) == 3)
+        return true;
+
+    if (player_mutation_level(MUT_HOLY_RADIANCE) == 3)
         return true;
 
     if (player_mutation_level(MUT_EYEBALLS) == 3)

@@ -441,6 +441,26 @@ static const map<species_type, species_def> species_data =
       SK_BOWS, SK_CROSSBOWS, SK_SLINGS },
 } },
 
+{ SP_ANGEL, {
+    "An",
+    "Angel", "Angelic", nullptr,
+    SPF_NONE,
+    -2, -1, -1, 3,
+    MONS_ANGEL,
+    HT_LAND, US_ALIVE, SIZE_MEDIUM,
+    9, 9, 6, // 24
+    { STAT_STR, STAT_INT, STAT_DEX }, 4,
+    { {MUT_NEGATIVE_ENERGY_RESISTANCE, 2, 1}, { MUT_FAST, 1, 1 }
+    { MUT_TORMENT_RESISTANCE, 1, 1 }, { MUT_HOLY_RADIANCE, 1, 1},
+    { MUT_HEAT_RESISTANCE, 1, 10},{ MUT_HOLY_RADIANCE, 1, 12},
+    { MUT_BIG_WINGS, 1, 15 }, { MUT_HOLY_RADIANCE, 1, 18}, },
+    {"You are unable to use Necromancy" },
+    {},
+    { JOB_FIGHTER, JOB_GLADIATOR, JOB_FIRE_ELEMENTALIST, JOB_HUNTER },
+    { SK_MACES_FLAILS, SK_POLEARMS, SK_LONG_BLADES,
+      SK_BOWS },
+} },
+
 { SP_KOBOLD, {
     "Ko",
     "Kobold", nullptr, nullptr,
