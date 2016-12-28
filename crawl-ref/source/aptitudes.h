@@ -93,7 +93,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_MORPH,           SK_EVOCATIONS,      1),
 
     // SP_HUSK
-    APT(SP_HUSK,           SK_FIGHTING,        3),
+    APT(SP_HUSK,           SK_FIGHTING,        2),
     APT(SP_HUSK,           SK_SHORT_BLADES,    UNUSABLE_SKILL),
     APT(SP_HUSK,           SK_LONG_BLADES,     UNUSABLE_SKILL),
     APT(SP_HUSK,           SK_AXES,            UNUSABLE_SKILL),
@@ -106,7 +106,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_HUSK,           SK_THROWING,        1),
     APT(SP_HUSK,           SK_ARMOUR,          -1),
     APT(SP_HUSK,           SK_DODGING,         3),
-    APT(SP_HUSK,           SK_STEALTH,         2),
+    APT(SP_HUSK,           SK_STEALTH,         1),
     #if TAG_MAJOR_VERSION == 34
     APT(SP_HUSK,           SK_STABBING,      UNUSABLE_SKILL),
     #endif
@@ -114,7 +114,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     #if TAG_MAJOR_VERSION == 34
     APT(SP_HUSK,           SK_TRAPS,         UNUSABLE_SKILL),
     #endif
-    APT(SP_HUSK,           SK_UNARMED_COMBAT,  4),
+    APT(SP_HUSK,           SK_UNARMED_COMBAT,  3),
     APT(SP_HUSK,           SK_SPELLCASTING,   -1),
     APT(SP_HUSK,           SK_CONJURATIONS,    -1),
     APT(SP_HUSK,           SK_HEXES,           -1),

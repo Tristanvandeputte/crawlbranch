@@ -346,6 +346,11 @@ bool can_wield(const item_def *weapon, bool say_reason,
         return false;
     }
 
+    if (you.species == SP_HUSK){
+        SAY(mpr("You bite at the weapon then suddenly lose interest."));
+        return false;
+    }
+
     if (player_mutation_level(MUT_MISSING_HAND)
             && you.hands_reqd(*weapon) == HANDS_TWO)
     {

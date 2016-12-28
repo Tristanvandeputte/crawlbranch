@@ -468,12 +468,13 @@ static const map<species_type, species_def> species_data =
     0, -3, -2, 3,
     MONS_GHOUL,
     HT_LAND, US_ALIVE, SIZE_MEDIUM,
-    10, 4, 10, // 24
+    10, 4, 9, // 23
     { STAT_STR, STAT_DEX }, 4,
-    { {MUT_CLAWS, 3, 1}, { MUT_FAST, 1, 1 },
-    { MUT_FANGS, 2, 1 },{  MUT_CARNIVOROUS, 3, 1 },
+    { {MUT_CLAWS, 1, 1},
+    { MUT_FANGS, 1, 1 },{  MUT_CARNIVOROUS, 3, 1 },
     { MUT_DEFORMED, 1, 1 }, {MUT_POISON_RESISTANCE, 1, 1 },
-    { MUT_REGENERATION, 1, 1}, { MUT_SHAGGY_FUR, 1, 1},
+    { MUT_REGENERATION, 1, 1}, { MUT_SHAGGY_FUR, 1, 1}, { MUT_CLAWS, 1, 5},
+     { MUT_FANGS, 1, 7}, { MUT_CLAWS, 3, 9},
     { MUT_REGENERATION, 1, 10}, { MUT_FANGS, 1, 10},
     { MUT_SHAGGY_FUR, 1, 10}, },
     {"You sap the life of enemies you damage."},
