@@ -1,4 +1,14 @@
 %%%%
+Morphling
+
+Morphlings are masters of evolution. They start at a vulnerable state, then form a coccoon-
+like structure around them to protect themselves until they evolve to their powerful
+final form.
+%%%%
+Husk
+
+Husks are violent wretched beings that search the vast dungeon for new foodsources.
+%%%%
 Angel
 
 Angels are holy beings of light which want to purge the deepect recesses of the dungeon.

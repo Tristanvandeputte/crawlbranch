@@ -103,8 +103,35 @@ bool attack::handle_phase_damaged()
     // TODO: Unify these, added here so we can get rid of player_attack
     if (attacker->is_player())
     {
-        if (damage_done)
+        if (damage_done){
             player_exercise_combat_skills();
+            // Husks have innate vampirism
+            if(attacker->as_player()->species == SP_HUSK){
+                // Do nothing if any of these conditions apply
+                if (damage_done < 1
+                    || defender->is_summoned()
+                    || !(defender->holiness() & MH_NATURAL)
+                    || attacker->stat_hp() == attacker->stat_maxhp()
+                    || attacker->is_player() && you.duration[DUR_DEATHS_DOOR])
+                {
+                    // notihng
+                }
+                else{
+                    // HUSKSTEAL
+                    int hp_boost = 1 + random2(damage_done);
+                    hp_boost = resist_adjust_damage(defender, BEAM_NEG, hp_boost);
+
+                    if (hp_boost)
+                    {
+                        obvious_effect = true;
+                        canned_msg(MSG_GAIN_HEALTH);
+                        dprf(DIAG_COMBAT, "Vampiric Healing: damage %d, healed %d",
+                             damage_done, hp_boost);
+                        attacker->heal(hp_boost);
+                    }
+                }
+            }
+        }
     }
     else
     {

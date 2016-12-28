@@ -450,7 +450,7 @@ static const map<species_type, species_def> species_data =
     HT_LAND, US_ALIVE, SIZE_MEDIUM,
     9, 9, 6, // 24
     { STAT_STR, STAT_INT, STAT_DEX }, 4,
-    { {MUT_NEGATIVE_ENERGY_RESISTANCE, 2, 1}, { MUT_FAST, 1, 1 }
+    { {MUT_NEGATIVE_ENERGY_RESISTANCE, 2, 1}, { MUT_FAST, 1, 1 },
     { MUT_TORMENT_RESISTANCE, 1, 1 }, { MUT_HOLY_RADIANCE, 1, 1},
     { MUT_HEAT_RESISTANCE, 1, 10},{ MUT_HOLY_RADIANCE, 1, 12},
     { MUT_BIG_WINGS, 1, 15 }, { MUT_HOLY_RADIANCE, 1, 18}, },
@@ -459,6 +459,47 @@ static const map<species_type, species_def> species_data =
     { JOB_FIGHTER, JOB_GLADIATOR, JOB_FIRE_ELEMENTALIST, JOB_HUNTER },
     { SK_MACES_FLAILS, SK_POLEARMS, SK_LONG_BLADES,
       SK_BOWS },
+} },
+
+{ SP_HUSK, {
+    "Hk",
+    "Husk", nullptr, nullptr,
+    SPF_NONE,
+    0, -3, -2, 3,
+    MONS_GHOUL,
+    HT_LAND, US_ALIVE, SIZE_MEDIUM,
+    10, 4, 10, // 24
+    { STAT_STR, STAT_DEX }, 4,
+    { {MUT_CLAWS, 3, 1}, { MUT_FAST, 1, 1 },
+    { MUT_FANGS, 2, 1 },{  MUT_CARNIVOROUS, 3, 1 },
+    { MUT_DEFORMED, 1, 1 }, {MUT_POISON_RESISTANCE, 1, 1 },
+    { MUT_REGENERATION, 1, 1}, { MUT_SHAGGY_FUR, 1, 1},
+    { MUT_REGENERATION, 1, 10}, { MUT_FANGS, 1, 10},
+    { MUT_SHAGGY_FUR, 1, 10}, },
+    {"You sap the life of enemies you damage."},
+    {},
+    { JOB_MONK, JOB_BERSERKER },
+    { SK_UNARMED_COMBAT },
+} },
+
+{ SP_MORPH, {
+    "Mo",
+    "Morphling", nullptr, nullptr,
+    SPF_NONE,
+    0, 0, 1, 5,
+    MONS_GARGOYLE,
+    HT_LAND, US_ALIVE, SIZE_MEDIUM,
+    5, 5, 5, // 15
+    { STAT_STR, STAT_STR, STAT_DEX }, 2, // HARDCODE MOST DEFICIENCIES
+    // SLOW REGEN IN COCC, HP-40%->-0% v XL1->20
+    { { MUT_HEAT_RESISTANCE, 1, 7},
+    { MUT_COLD_RESISTANCE, 1, 7}, { MUT_POISON_RESISTANCE, 1, 7},
+    { MUT_NEGATIVE_ENERGY_RESISTANCE, 1, 7}, { MUT_NEGATIVE_ENERGY_RESISTANCE, 1, 14},
+    { MUT_HEAT_RESISTANCE, 1, 14}, { MUT_COLD_RESISTANCE, 1, 14}, }, // + special mutation?
+    {},
+    {},
+    {},
+    {},
 } },
 
 { SP_KOBOLD, {

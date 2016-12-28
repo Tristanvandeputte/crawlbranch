@@ -3358,6 +3358,10 @@ vector<talent> your_talents(bool check_confused, bool include_unusable)
         // Other dracs can mutate big wings whenever as well.
         _add_talent(talents, ABIL_FLY, check_confused);
     }
+    // fk it, specialcase angels
+    if(you.species == SP_ANGEL && you.experience_level > 14){
+        _add_talent(talents, ABIL_FLY, check_confused);
+    }
 
     if (you.attribute[ATTR_PERM_FLIGHT] && you.racial_permanent_flight())
         _add_talent(talents, ABIL_STOP_FLYING, check_confused);

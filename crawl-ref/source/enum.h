@@ -4256,9 +4256,11 @@ enum species_type
     SP_LAVA_ORC,
 #endif
     SP_GARGOYLE,
+    SP_ANGEL,
+    SP_HUSK,
     SP_FORMICID,
     SP_VINE_STALKER,
-    SP_ANGEL,
+    SP_MORPH,
     NUM_SPECIES,
 
     SP_UNKNOWN  = 100,

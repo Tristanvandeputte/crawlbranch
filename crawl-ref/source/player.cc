@@ -1130,6 +1130,12 @@ int player_regen()
 
     int rr = you.hp_max / 3;
 
+    // If player is Morph,will regen slower in coccoon
+    if(you.species == SP_MORPH && you.experience_level>6 & you.experience_level<14){
+        // cut nat. healing in half
+        rr = you.hp_max / 6;
+    }
+
     if (rr > 20)
         rr = 20 + ((rr - 20) / 2);
 
@@ -1962,6 +1968,16 @@ int player_prot_life(bool calc_unid, bool temp, bool items)
 int player_movement_speed()
 {
     int mv = 10;
+
+    // Morphlings are slow af in coccoon
+    if(you.species == SP_MORPH){
+        if(you.experience_level > 6 && you.experience_level < 14){
+            mv -=2;
+        }
+        else if(you.experience_level>13){
+            mv +=2;
+        }
+    }
 
     // transformations
     if (you.form == TRAN_BAT)
@@ -4035,9 +4051,30 @@ int get_real_hp(bool trans, bool rotted)
     hitp += you.experience_level * you.skill(SK_FIGHTING, 5, true) / 70
           + (you.skill(SK_FIGHTING, 3, true) + 1) / 2;
 
-    // Racial modifier.
-    hitp *= 10 + species_hp_modifier(you.species);
-    hitp /= 10;
+    // Morphlings start with -40% which disappears over time
+    if(you.species == SP_MORPH){
+        int morph_mod = 2;
+        if(you.experience_level < 5){
+            morph_mod = -2;
+        }
+        else if(you.experience_level < 10){
+            morph_mod = -1;
+        }
+        else if(you.experience_level < 15){
+            morph_mod = -0;
+        }
+        else if(you.experience_level < 20){
+            morph_mod = 1;
+        }
+        // Racial modifier.
+        hitp *= 10 + morph_mod;
+        hitp /= 10;
+    }
+    else{
+        // Racial modifier.
+        hitp *= 10 + species_hp_modifier(you.species);
+        hitp /= 10;
+    }
 
     const bool hep_frail = have_passive(passive_t::frail)
                           || player_under_penance(GOD_HEPLIAKLQANA);
@@ -5987,6 +6024,17 @@ int player::racial_ac(bool temp) const
         if (species == SP_GREY_DRACONIAN) // no breath
             AC += 500;
         return AC;
+    }
+
+    if(species == SP_MORPH){
+        // coccoon stage (100=1AC)
+        if( 6 < experience_level && experience_level < 14){
+            return (700 + (experience_level-7)*100);
+        }
+        // post coccoon
+        else if(experience_level > 13){
+            return 600;
+        }
     }
 
     if (!(player_is_shapechanged() && temp))

@@ -161,7 +161,7 @@ static const species_type species_order[] =
 {
     // comparatively human-like looks
     SP_HUMAN,          SP_DEEP_ELF,
-    SP_DEEP_DWARF,     SP_HILL_ORC,
+    SP_DEEP_DWARF,     SP_HILL_ORC, SP_MORPH,
     // small species
     SP_HALFLING,       SP_KOBOLD,
     SP_SPRIGGAN,
@@ -171,7 +171,7 @@ static const species_type species_order[] =
     SP_NAGA,           SP_CENTAUR,
     SP_MERFOLK,        SP_MINOTAUR,
     SP_TENGU,          SP_BASE_DRACONIAN,
-    SP_GARGOYLE,       SP_FORMICID,
+    SP_GARGOYLE,       SP_FORMICID,    SP_HUSK,
     // mostly human shape but made of a strange substance
     SP_VINE_STALKER,
     // celestial species

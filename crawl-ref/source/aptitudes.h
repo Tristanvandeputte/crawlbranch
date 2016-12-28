@@ -12,6 +12,86 @@ static inline species_skill_aptitude APT(species_type sp,
 
 static const species_skill_aptitude species_skill_aptitudes[] =
 {
+
+    // SP_MORPH (evolution at its best, based off butterfly (no wings tho))
+    APT(SP_MORPH,           SK_FIGHTING,        1),
+    APT(SP_MORPH,           SK_SHORT_BLADES,    0),
+    APT(SP_MORPH,           SK_LONG_BLADES,     0),
+    APT(SP_MORPH,           SK_AXES,            0),
+    APT(SP_MORPH,           SK_MACES_FLAILS,    0),
+    APT(SP_MORPH,           SK_POLEARMS,        1),
+    APT(SP_MORPH,           SK_STAVES,          1),
+    APT(SP_MORPH,           SK_SLINGS,          0),
+    APT(SP_MORPH,           SK_BOWS,            2),
+    APT(SP_MORPH,           SK_CROSSBOWS,       2),
+    APT(SP_MORPH,           SK_THROWING,        0),
+    APT(SP_MORPH,           SK_ARMOUR,          -1),
+    APT(SP_MORPH,           SK_DODGING,         2),
+    APT(SP_MORPH,           SK_STEALTH,         1),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_MORPH,           SK_STABBING,      UNUSABLE_SKILL),
+    #endif
+    APT(SP_MORPH,           SK_SHIELDS,         0),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_MORPH,           SK_TRAPS,         UNUSABLE_SKILL),
+    #endif
+    APT(SP_MORPH,           SK_UNARMED_COMBAT,  -1),
+    APT(SP_MORPH,           SK_SPELLCASTING,   1),
+    APT(SP_MORPH,           SK_CONJURATIONS,    1),
+    APT(SP_MORPH,           SK_HEXES,           1),
+    APT(SP_MORPH,           SK_CHARMS,          1),
+    APT(SP_MORPH,           SK_SUMMONINGS,      1),
+    APT(SP_MORPH,           SK_NECROMANCY,      0),
+    APT(SP_MORPH,           SK_TRANSLOCATIONS,  2),
+    APT(SP_MORPH,           SK_TRANSMUTATIONS,  3),
+    APT(SP_MORPH,           SK_FIRE_MAGIC,      1),
+    APT(SP_MORPH,           SK_ICE_MAGIC,       1),
+    APT(SP_MORPH,           SK_AIR_MAGIC,       1),
+    APT(SP_MORPH,           SK_EARTH_MAGIC,     1),
+    APT(SP_MORPH,           SK_POISON_MAGIC,    1),
+    APT(SP_MORPH,           SK_INVOCATIONS,     1),
+    APT(SP_MORPH,           SK_EVOCATIONS,      1),
+
+    // SP_HUSK
+    APT(SP_HUSK,           SK_FIGHTING,        3),
+    APT(SP_HUSK,           SK_SHORT_BLADES,    UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_LONG_BLADES,     UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_AXES,            UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_MACES_FLAILS,    UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_POLEARMS,        UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_STAVES,          UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_SLINGS,          0),
+    APT(SP_HUSK,           SK_BOWS,            UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_CROSSBOWS,       UNUSABLE_SKILL),
+    APT(SP_HUSK,           SK_THROWING,        1),
+    APT(SP_HUSK,           SK_ARMOUR,          -1),
+    APT(SP_HUSK,           SK_DODGING,         3),
+    APT(SP_HUSK,           SK_STEALTH,         2),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_HUSK,           SK_STABBING,      UNUSABLE_SKILL),
+    #endif
+    APT(SP_HUSK,           SK_SHIELDS,         UNUSABLE_SKILL),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_HUSK,           SK_TRAPS,         UNUSABLE_SKILL),
+    #endif
+    APT(SP_HUSK,           SK_UNARMED_COMBAT,  4),
+    APT(SP_HUSK,           SK_SPELLCASTING,   -1),
+    APT(SP_HUSK,           SK_CONJURATIONS,    -1),
+    APT(SP_HUSK,           SK_HEXES,           -1),
+    APT(SP_HUSK,           SK_CHARMS,          -1),
+    APT(SP_HUSK,           SK_SUMMONINGS,      -2),
+    APT(SP_HUSK,           SK_NECROMANCY,      0),
+    APT(SP_HUSK,           SK_TRANSLOCATIONS,  0),
+    APT(SP_HUSK,           SK_TRANSMUTATIONS,  1),
+    APT(SP_HUSK,           SK_FIRE_MAGIC,      -2),
+    APT(SP_HUSK,           SK_ICE_MAGIC,       -1),
+    APT(SP_HUSK,           SK_AIR_MAGIC,       -1),
+    APT(SP_HUSK,           SK_EARTH_MAGIC,     0),
+    APT(SP_HUSK,           SK_POISON_MAGIC,    1),
+    APT(SP_HUSK,           SK_INVOCATIONS,     0),
+    APT(SP_HUSK,           SK_EVOCATIONS,      -2),
+
+
     // SP_ANGEL
     APT(SP_ANGEL,           SK_FIGHTING,        1),
     APT(SP_ANGEL,           SK_SHORT_BLADES,    0),
