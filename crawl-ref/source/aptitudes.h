@@ -12,6 +12,46 @@ static inline species_skill_aptitude APT(species_type sp,
 
 static const species_skill_aptitude species_skill_aptitudes[] =
 {
+    // SP_BEHOLDER (ancient magic floating eye thingies)
+    APT(SP_BEHOLDER,           SK_FIGHTING,        -2),
+    APT(SP_BEHOLDER,           SK_SHORT_BLADES,    -1),
+    APT(SP_BEHOLDER,           SK_LONG_BLADES,     -3),
+    APT(SP_BEHOLDER,           SK_AXES,            -3),
+    APT(SP_BEHOLDER,           SK_MACES_FLAILS,    -3),
+    APT(SP_BEHOLDER,           SK_POLEARMS,        -3),
+    APT(SP_BEHOLDER,           SK_STAVES,          -1),
+    APT(SP_BEHOLDER,           SK_SLINGS,          -1),
+    APT(SP_BEHOLDER,           SK_BOWS,            -4),
+    APT(SP_BEHOLDER,           SK_CROSSBOWS,       -4),
+    APT(SP_BEHOLDER,           SK_THROWING,        0),
+    APT(SP_BEHOLDER,           SK_ARMOUR,          UNUSABLE_SKILL),
+    APT(SP_BEHOLDER,           SK_DODGING,         2),
+    APT(SP_BEHOLDER,           SK_STEALTH,         2),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_BEHOLDER,           SK_STABBING,      UNUSABLE_SKILL),
+    #endif
+    APT(SP_BEHOLDER,           SK_SHIELDS,         -2),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_BEHOLDER,           SK_TRAPS,         UNUSABLE_SKILL),
+    #endif
+    APT(SP_BEHOLDER,           SK_UNARMED_COMBAT,  -1),
+    APT(SP_BEHOLDER,           SK_SPELLCASTING,   3),
+    APT(SP_BEHOLDER,           SK_CONJURATIONS,    4),
+    APT(SP_BEHOLDER,           SK_HEXES,           3),
+    APT(SP_BEHOLDER,           SK_CHARMS,          3),
+    APT(SP_BEHOLDER,           SK_SUMMONINGS,      3),
+    APT(SP_BEHOLDER,           SK_NECROMANCY,      3),
+    APT(SP_BEHOLDER,           SK_TRANSLOCATIONS,  4),
+    APT(SP_BEHOLDER,           SK_TRANSMUTATIONS,  2),
+    APT(SP_BEHOLDER,           SK_FIRE_MAGIC,      3),
+    APT(SP_BEHOLDER,           SK_ICE_MAGIC,       3),
+    APT(SP_BEHOLDER,           SK_AIR_MAGIC,       3),
+    APT(SP_BEHOLDER,           SK_EARTH_MAGIC,     3),
+    APT(SP_BEHOLDER,           SK_POISON_MAGIC,    3),
+    APT(SP_BEHOLDER,           SK_INVOCATIONS,     2),
+    APT(SP_BEHOLDER,           SK_EVOCATIONS,      2),
+
+
 
     // SP_MORPH (evolution at its best, based off butterfly (no wings tho))
     APT(SP_MORPH,           SK_FIGHTING,        1),

@@ -502,6 +502,25 @@ static const map<species_type, species_def> species_data =
     {},
 } },
 
+{ SP_BEHOLDER, { // wild magic?
+    "Be",
+    "Beholder", nullptr, nullptr,
+    SPF_NONE,
+    0, -3, 4, 6,
+    MONS_SHINING_EYE,
+    HT_WATER, US_ALIVE, SIZE_MEDIUM,
+    5, 18, 5, // 28
+    { STAT_INT }, 4,
+    {{ MUT_GELATINOUS_BODY, 2, 1 },  {MUT_MUTATION_RESISTANCE, 1, 1 },
+    { MUT_EYEBALLS, 3, 1 }, {MUT_UNBREATHING, 1 ,1 },  {MUT_TRANSLUCENT_SKIN, 2 ,1 },},
+    {},
+    {},
+    { JOB_WIZARD, JOB_CONJURER, JOB_SUMMONER, JOB_NECROMANCER,
+      JOB_FIRE_ELEMENTALIST, JOB_ICE_ELEMENTALIST, JOB_AIR_ELEMENTALIST,
+      JOB_EARTH_ELEMENTALIST, JOB_VENOM_MAGE },
+    { SK_SHORT_BLADES, SK_STAVES, SK_SLINGS },
+} },
+
 { SP_KOBOLD, {
     "Ko",
     "Kobold", nullptr, nullptr,

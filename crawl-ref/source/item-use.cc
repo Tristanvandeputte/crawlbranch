@@ -341,6 +341,11 @@ bool can_wield(const item_def *weapon, bool say_reason,
     if (!weapon)
         return true;
 
+    if (you.species == SP_BEHOLDER && you.hands_reqd(*weapon) == HANDS_TWO){
+        SAY(mpr("This weapon is too big and clunky for you to use."));
+        return false;
+    }
+
     if (player_mutation_level(MUT_MISSING_HAND)
             && you.hands_reqd(*weapon) == HANDS_TWO)
     {
@@ -711,7 +716,7 @@ bool can_wear_armour(const item_def &item, bool verbose, bool ignore_temporary)
     const int sub_type = item.sub_type;
     const equipment_type slot = get_armour_slot(item);
 
-    if (you.species == SP_OCTOPODE && slot != EQ_HELMET && slot != EQ_SHIELD)
+    if ((you.species == SP_OCTOPODE || you.species == SP_BEHOLDER) && slot != EQ_HELMET && slot != EQ_SHIELD)
     {
         if (verbose)
             mpr("You can't wear that!");

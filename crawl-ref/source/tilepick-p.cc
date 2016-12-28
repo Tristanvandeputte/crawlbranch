@@ -632,6 +632,8 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
         return TILEP_BASE_VINE_STALKER;
     case SP_ANGEL:
         return TILEP_MONS_ANGEL;
+    case SP_BEHOLDER:
+        return TILEP_MONS_SHINING_EYE;
     case SP_HUSK:
         return TILEP_BASE_GHOUL;
     case SP_MORPH:

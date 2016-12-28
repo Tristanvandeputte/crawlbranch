@@ -180,7 +180,7 @@ static const species_type species_order[] =
     SP_MUMMY,          SP_GHOUL,
     SP_VAMPIRE,
     // not humanoid at all
-    SP_FELID,          SP_OCTOPODE,
+    SP_FELID,          SP_OCTOPODE, SP_BEHOLDER,
 };
 COMPILE_CHECK(ARRAYSZ(species_order) <= NUM_SPECIES);
 
