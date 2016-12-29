@@ -220,7 +220,15 @@ int attack::calc_to_hit(bool random)
             }
             else if (weapon->base_type == OBJ_STAVES)
                 mhit += property(*weapon, PWPN_HIT);
+
+            // wraiths get additional bonuses for using scythes
+            if(attacker->as_player()->species == SP_WRAITH && attacker->as_player()->wearing(EQ_WEAPON, WPN_SCYTHE)){
+                // scales with level, tot 10
+                int max_dmg = 14;
+                mhit += min(max_dmg,(max_dmg/20)*attacker->as_player()->experience_level);
+            }
         }
+
 
         // slaying bonus
         mhit += slaying_bonus(wpn_skill == SK_THROWING

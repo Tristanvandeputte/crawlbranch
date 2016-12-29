@@ -412,6 +412,7 @@ string describe_mutations(bool center_title)
                        you.species == SP_NAGA ? "serpentine skin is tough" :
                        you.species == SP_GARGOYLE ? "stone body is resilient" :
                        you.species == SP_MORPH ? "body is surrounded by a coccoon-like substance" :
+                       you.species == SP_WRAITH ? "body is surrounded by a shroud of death and decay" :
                                                     scale_clause.c_str(),
                        you.racial_ac(false) / 100),
                     player_is_shapechanged()

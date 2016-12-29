@@ -4262,6 +4262,8 @@ enum species_type
     SP_VINE_STALKER,
     SP_MORPH,
     SP_BEHOLDER,
+    SP_REVENANT,
+    SP_WRAITH,
     NUM_SPECIES,
 
     SP_UNKNOWN  = 100,

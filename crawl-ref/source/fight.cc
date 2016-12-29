@@ -717,6 +717,190 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
         }
     }
 
+
+    if (weap && item_attack_skill(*weap) == SK_POLEARMS && attacker.is_player()){
+        const coord_def atk = attacker.pos();
+        // pos of defender = def
+        // stelt vector voor van richting aanval
+        coord_def atk_vector = def - atk;
+
+        printf("att: %i %i\n", atk.x, atk.y);
+        printf("def: %i %i\n", def.x, def.y);
+        printf("vec: %i %i\n", atk_vector.x, atk_vector.y);
+
+        // If player is a wraith with a scythe
+        if(attacker.as_player()->species == SP_WRAITH && attacker.as_player()->wearing(EQ_WEAPON, WPN_SCYTHE)){
+            // Pos of attacker
+
+            // scythe raakt 3 spots tegelijk
+
+            // we kunnen casen op atk_vector en nieuwe vectors optellen bij def om
+            // nieuwe targets te bekomen
+            // nadeel: 24 cases
+            // coord def -> x,y
+            // recht boven speler (1 ver)
+            // 3 cases: kruis/diagonaal/wonky rare stuff
+            // kruis up/down
+            if(atk_vector.x == 0){
+                printf("cross up/down\n");
+                actor *target1 = actor_at(def + coord_def(1,0));
+                if (target1 && !_dont_harm(attacker, *target1))
+                    targets.push_back(target1);
+                actor *target2 = actor_at(def + coord_def(-1,0));
+                if (target2 && !_dont_harm(attacker, *target2))
+                    targets.push_back(target2);
+            }
+            // kruis links/rechts
+            else if(atk_vector.y == 0){
+                printf("cross links/rechts\n");
+                actor *target1 = actor_at(def + coord_def(0,1));
+                if (target1 && !_dont_harm(attacker, *target1))
+                    targets.push_back(target1);
+                actor *target2 = actor_at(def + coord_def(0,-1));
+                if (target2 && !_dont_harm(attacker, *target2))
+                    targets.push_back(target2);
+            }
+            // diagonalen
+            else if(abs(atk_vector.y) == abs(atk_vector.x)){
+                // links diag
+                if(atk_vector.x < 0){
+                    // down
+                    if(atk_vector.y > 0){
+                        printf("diag links/down\n");
+                        actor *target1 = actor_at(def + coord_def(1,0));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(def + coord_def(0,-1));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                    // up
+                    else{
+                        printf("diag links/up\n");
+                        actor *target1 = actor_at(def + coord_def(1,0));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(def + coord_def(0,1));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                }
+                // rechts
+                else{
+                    // down (fkin backwards NOTE !!!)
+                    if(atk_vector.y > 0){
+                        printf("diag rechts/down\n");
+                        actor *target1 = actor_at(def + coord_def(-1,0));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(def + coord_def(0,-1));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                    // up
+                    else{
+                        printf("diag rechts/up\n");
+                        actor *target1 = actor_at(def + coord_def(-1,0));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(def + coord_def(0,1));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                }
+            }
+            // Chess horse movement
+            else{
+                // 2 up
+                if(atk_vector.y == 2){
+                    // links
+                    if(atk_vector.x<0){
+                        printf("s 2UL\n");
+                        actor *target2 = actor_at(atk + coord_def(-2,1));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                    // rechts
+                    else{
+                        printf("s 2UR\n");
+                        actor *target2 = actor_at(atk + coord_def(2,1));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                    actor *target1 = actor_at(atk + coord_def(0,2));
+                    if (target1 && !_dont_harm(attacker, *target1))
+                        targets.push_back(target1);
+                }
+                // 1 up
+                if(atk_vector.y == 1){
+                    // links
+                    if(atk_vector.x<0){
+                        printf("s 1UL\n");
+                        actor *target1 = actor_at(atk + coord_def(-1,2));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(atk + coord_def(-2,0));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                    // rechts
+                    else{
+                        printf("s 1UR\n");
+                        actor *target2 = actor_at(atk + coord_def(1,2));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                        actor *target1 = actor_at(atk + coord_def(2,0));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                    }
+                }
+                // 1 down
+                if(atk_vector.y == -1){
+                    // links
+                    if(atk_vector.x<0){
+                        printf("s 1DL\n");
+                        actor *target1 = actor_at(atk + coord_def(-1,-2));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(atk + coord_def(-2,0));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                    // rechts
+                    else{
+                        printf("s 1DR\n");
+                        actor *target1 = actor_at(atk + coord_def(1,-2));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                        actor *target2 = actor_at(atk + coord_def(2,0));
+                        if (target2 && !_dont_harm(attacker, *target2))
+                            targets.push_back(target2);
+                    }
+                }
+                // 2 down
+                if(atk_vector.y == -2){
+                    // links
+                    if(atk_vector.x<0){
+                        printf("s 2DL\n");
+                        actor *target1 = actor_at(atk + coord_def(-2,-1));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                    }
+                    // rechts
+                    else{
+                        printf("s 2DR\n");
+                        actor *target1 = actor_at(atk + coord_def(2,-1));
+                        if (target1 && !_dont_harm(attacker, *target1))
+                            targets.push_back(target1);
+                    }
+                    actor *target2 = actor_at(atk + coord_def(0,-2));
+                    if (target2 && !_dont_harm(attacker, *target2))
+                        targets.push_back(target2);
+                }
+            }
+        }
+    }
+
     if (weap && is_unrandom_artefact(*weap, UNRAND_GYRE))
     {
         list<actor*> new_targets;

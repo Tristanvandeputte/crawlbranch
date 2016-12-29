@@ -12,6 +12,86 @@ static inline species_skill_aptitude APT(species_type sp,
 
 static const species_skill_aptitude species_skill_aptitudes[] =
 {
+    // SP_WRAITH (the grim fkin reaper)
+    APT(SP_WRAITH,           SK_FIGHTING,         1),
+    APT(SP_WRAITH,           SK_SHORT_BLADES,     0),
+    APT(SP_WRAITH,           SK_LONG_BLADES,      0),
+    APT(SP_WRAITH,           SK_AXES,             1), // also ok for execution
+    APT(SP_WRAITH,           SK_MACES_FLAILS,     0),
+    APT(SP_WRAITH,           SK_POLEARMS,         4), // + extra dmg from scythes?
+    APT(SP_WRAITH,           SK_STAVES,          -1),
+    APT(SP_WRAITH,           SK_SLINGS,          -2),
+    APT(SP_WRAITH,           SK_BOWS,            -2),
+    APT(SP_WRAITH,           SK_CROSSBOWS,        1),
+    APT(SP_WRAITH,           SK_THROWING,        -2),
+    APT(SP_WRAITH,           SK_ARMOUR,          -1),
+    APT(SP_WRAITH,           SK_DODGING,          1),
+    APT(SP_WRAITH,           SK_STEALTH,          2),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_WRAITH,           SK_STABBING,      UNUSABLE_SKILL),
+    #endif
+    APT(SP_WRAITH,           SK_SHIELDS,          0), // extra schythe bonus w/o shield? mb AoE?
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_WRAITH,           SK_TRAPS,         UNUSABLE_SKILL),
+    #endif
+    APT(SP_WRAITH,           SK_UNARMED_COMBAT,   1),
+    APT(SP_WRAITH,           SK_SPELLCASTING,     2),
+    APT(SP_WRAITH,           SK_CONJURATIONS,     2),
+    APT(SP_WRAITH,           SK_HEXES,            2),
+    APT(SP_WRAITH,           SK_CHARMS,           0),
+    APT(SP_WRAITH,           SK_SUMMONINGS,      -1),
+    APT(SP_WRAITH,           SK_NECROMANCY,       3),
+    APT(SP_WRAITH,           SK_TRANSLOCATIONS,   2),
+    APT(SP_WRAITH,           SK_TRANSMUTATIONS,  UNUSABLE_SKILL),
+    APT(SP_WRAITH,           SK_FIRE_MAGIC,      -4),
+    APT(SP_WRAITH,           SK_ICE_MAGIC,        2),
+    APT(SP_WRAITH,           SK_AIR_MAGIC,       -1),
+    APT(SP_WRAITH,           SK_EARTH_MAGIC,     -3),
+    APT(SP_WRAITH,           SK_POISON_MAGIC,     2),
+    APT(SP_WRAITH,           SK_INVOCATIONS,      0),
+    APT(SP_WRAITH,           SK_EVOCATIONS,       0),
+
+    // SP_REVENANT
+    APT(SP_REVENANT,           SK_FIGHTING,        -1),
+    APT(SP_REVENANT,           SK_SHORT_BLADES,     3),
+    APT(SP_REVENANT,           SK_LONG_BLADES,      1),
+    APT(SP_REVENANT,           SK_AXES,            -1),
+    APT(SP_REVENANT,           SK_MACES_FLAILS,    -1),
+    APT(SP_REVENANT,           SK_POLEARMS,         0),
+    APT(SP_REVENANT,           SK_STAVES,           0),
+    APT(SP_REVENANT,           SK_SLINGS,           0),
+    APT(SP_REVENANT,           SK_BOWS,             1),
+    APT(SP_REVENANT,           SK_CROSSBOWS,        2),
+    APT(SP_REVENANT,           SK_THROWING,         0),
+    APT(SP_REVENANT,           SK_ARMOUR,          -1),
+    APT(SP_REVENANT,           SK_DODGING,          3),
+    APT(SP_REVENANT,           SK_STEALTH,          4),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_REVENANT,           SK_STABBING,      UNUSABLE_SKILL),
+    #endif
+    APT(SP_REVENANT,           SK_SHIELDS,         -1),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_REVENANT,           SK_TRAPS,         UNUSABLE_SKILL),
+    #endif
+    APT(SP_REVENANT,           SK_UNARMED_COMBAT,  -1),
+    APT(SP_REVENANT,           SK_SPELLCASTING,     2),
+    APT(SP_REVENANT,           SK_CONJURATIONS,    -1),
+    APT(SP_REVENANT,           SK_HEXES,            1),
+    APT(SP_REVENANT,           SK_CHARMS,           2),
+    APT(SP_REVENANT,           SK_SUMMONINGS,      -2),
+    APT(SP_REVENANT,           SK_NECROMANCY,      -1),
+    APT(SP_REVENANT,           SK_TRANSLOCATIONS,   3),
+    APT(SP_REVENANT,           SK_TRANSMUTATIONS,  -2),
+    APT(SP_REVENANT,           SK_FIRE_MAGIC,      -4),
+    APT(SP_REVENANT,           SK_ICE_MAGIC,        0),
+    APT(SP_REVENANT,           SK_AIR_MAGIC,        0),
+    APT(SP_REVENANT,           SK_EARTH_MAGIC,     -1),
+    APT(SP_REVENANT,           SK_POISON_MAGIC,     1),
+    APT(SP_REVENANT,           SK_INVOCATIONS,      2),
+    APT(SP_REVENANT,           SK_EVOCATIONS,       1),
+
+
+
     // SP_BEHOLDER (ancient magic floating eye thingies)
     APT(SP_BEHOLDER,           SK_FIGHTING,        -2),
     APT(SP_BEHOLDER,           SK_SHORT_BLADES,    -1),

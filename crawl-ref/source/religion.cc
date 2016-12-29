@@ -3287,9 +3287,17 @@ static void _set_initial_god_piety()
         break;
 
     default:
+        // Sif loves beholders
+        if(you.species == SP_BEHOLDER && you.religion == GOD_SIF_MUNA){
+            you.piety = 31;
+            if (you.piety_max[you.religion] < 31)
+                you.piety_max[you.religion] = 31;
+        }
+        else{
         you.piety = 15; // to prevent near instant excommunication
         if (you.piety_max[you.religion] < 15)
             you.piety_max[you.religion] = 15;
+        }
         you.piety_hysteresis = 0;
         you.gift_timeout = 0;
         break;
@@ -3516,9 +3524,15 @@ void join_religion(god_type which_god)
     mark_milestone("god.worship", "became a worshipper of "
                    + god_name(you.religion) + ".");
     take_note(Note(NOTE_GET_GOD, you.religion));
-    simple_god_message(
-        make_stringf(" welcomes you%s!",
-                     you.worshipped[which_god] ? " back" : "").c_str());
+    if(you.species == SP_BEHOLDER && which_god == GOD_SIF_MUNA){
+        simple_god_message(make_stringf(" welcomes her creation%s!",
+        you.worshipped[which_god] ? " back" : "").c_str());
+    }
+    else{
+        simple_god_message(
+            make_stringf(" welcomes you%s!",
+            you.worshipped[which_god] ? " back" : "").c_str());
+    }
     // included in default force_more_message
 #ifdef DGL_WHEREIS
     whereis_record();

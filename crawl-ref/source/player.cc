@@ -6037,6 +6037,19 @@ int player::racial_ac(bool temp) const
         }
     }
 
+    if(species == SP_WRAITH){
+        // scaling AC (how to nerf on spellcasting tho?)
+        // max 30 AC @ lvl 20? (+5 for scythe?)
+        int max_base_shroud = 30;
+        int min_ac = 3;
+        int max_shroud_ac = max_base_shroud - min_ac;
+        int shroud = min(max_shroud_ac,(max_shroud_ac/20)*experience_level);
+        if(wearing(EQ_WEAPON, WPN_SCYTHE)){
+            shroud += 5;
+        }
+        return (min_ac + shroud) * 100;
+    }
+
     if (!(player_is_shapechanged() && temp))
     {
         if (species == SP_NAGA)

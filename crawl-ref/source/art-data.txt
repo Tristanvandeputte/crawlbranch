@@ -1286,6 +1286,32 @@ COLOUR:   WHITE
 TILE:     urand_cekugob
 BOOL:     inv, nogen
 
+NAME:    Grim
+OBJ:     OBJ_WEAPONS/WPN_SCYTHE
+PLUS:    +14
+STR:     +5
+DEX:     +5
+INT:     +5
+COLOUR:  ETC_DARK
+CURSED:  100
+TILE:    spwpn_scythe_of_curses
+BOOL:    evil,skip_ego,fog
+TILE_EQ: finisher
+BRAND:   SPWPN_PAIN
+VALUE:   1000
+
+NAME:    Betrayal
+OBJ:     OBJ_WEAPONS/WPN_SCYTHE
+PLUS:    +10
+EV:      +5
+STEALTH: +5
+COLOUR:  ETC_SILVER
+TILE:    spwpn_scythe_of_curses
+BOOL:    evil,skip_ego
+TILE_EQ: finisher
+BRAND:   SPWPN_REAPING
+VALUE:   1000
+
 # This entry must always be last.
 ENUM:   DUMMY2
 NAME:   DUMMY UNRANDART 2

@@ -634,6 +634,10 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
         return TILEP_MONS_ANGEL;
     case SP_BEHOLDER:
         return TILEP_MONS_SHINING_EYE;
+    case SP_REVENANT:
+        return TILEP_MONS_REVENANT;
+    case SP_WRAITH:
+        return TILEP_MONS_WRAITH;
     case SP_HUSK:
         return TILEP_BASE_GHOUL;
     case SP_MORPH:
@@ -1079,6 +1083,30 @@ void tilep_calc_flags(const dolls_data &doll, int flag[])
         flag[TILEP_PART_BODY]  = TILEP_FLAG_HIDE;
         if (doll.parts[TILEP_PART_ARM] != TILEP_ARM_OCTOPODE_SPIKE)
             flag[TILEP_PART_ARM] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_HAIR]  = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_BEARD] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_SHADOW]= TILEP_FLAG_HIDE;
+        flag[TILEP_PART_DRCWING]=TILEP_FLAG_HIDE;
+        flag[TILEP_PART_DRCHEAD]=TILEP_FLAG_HIDE;
+    }
+    else if (is_player_tile(doll.parts[TILEP_PART_BASE], TILEP_MONS_SHINING_EYE))
+    {
+        flag[TILEP_PART_CLOAK] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_BOOTS] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_LEG]   = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_BODY]  = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_HAIR]  = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_BEARD] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_SHADOW]= TILEP_FLAG_HIDE;
+        flag[TILEP_PART_DRCWING]=TILEP_FLAG_HIDE;
+        flag[TILEP_PART_DRCHEAD]=TILEP_FLAG_HIDE;
+    }
+    else if (is_player_tile(doll.parts[TILEP_PART_BASE], TILEP_MONS_WRAITH))
+    {
+        flag[TILEP_PART_CLOAK] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_BOOTS] = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_LEG]   = TILEP_FLAG_HIDE;
+        flag[TILEP_PART_BODY]  = TILEP_FLAG_HIDE;
         flag[TILEP_PART_HAIR]  = TILEP_FLAG_HIDE;
         flag[TILEP_PART_BEARD] = TILEP_FLAG_HIDE;
         flag[TILEP_PART_SHADOW]= TILEP_FLAG_HIDE;

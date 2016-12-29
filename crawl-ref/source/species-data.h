@@ -522,6 +522,46 @@ static const map<species_type, species_def> species_data =
     { SK_SHORT_BLADES, SK_STAVES, SK_SLINGS },
 } },
 
+{ SP_REVENANT, {
+    "Rv",
+    "Revenant", nullptr, nullptr,
+    SPF_NONE,
+    1, -1, 0, 2,
+    MONS_REVENANT,
+    HT_LAND, US_UNDEAD, SIZE_SMALL,
+    5, 9, 10, // 24
+    { STAT_STR, STAT_INT, STAT_DEX }, 4,
+    { { MUT_BLINK, 1, 1 }, { MUT_SLOW_METABOLISM, 1, 1 },
+    { MUT_THIN_SKELETAL_STRUCTURE, 1, 1 }, { MUT_NIGHTSTALKER, 1, 1 },
+    { MUT_NIGHTSTALKER, 1, 6 }, { MUT_BLINK, 1, 10 }, { MUT_NIGHTSTALKER, 1, 12 }, },
+    {},
+    {},
+    { JOB_ASSASSIN, JOB_ARTIFICER, JOB_WARPER,
+      JOB_ENCHANTER, JOB_CONJURER, JOB_VENOM_MAGE },
+    { SK_SHORT_BLADES, SK_CROSSBOWS },
+} },
+
+{ SP_WRAITH, { // kunnen geen armor/shoes dragen, gloves en de rst nog wel
+    // surrounded door death shroud die tons o' AC geeft
+    // +ACC/DMG op scythes
+    "Wr",
+    "Wraith", nullptr, nullptr,
+    SPF_NONE,
+    0, 0, 1, 3,
+    MONS_WRAITH,
+    HT_WATER, US_UNDEAD, SIZE_MEDIUM,
+    9, 9, 9, // 27
+    { STAT_STR, STAT_INT, STAT_DEX }, 4,
+    { { MUT_NEGATIVE_ENERGY_RESISTANCE, 3, 1 }, { MUT_COLD_RESISTANCE, 1, 1 },
+      { MUT_TORMENT_RESISTANCE, 1, 1 }, { MUT_UNBREATHING, 1, 1 },
+      { MUT_NECRO_ENHANCER, 1, 8 }, { MUT_NECRO_ENHANCER, 1, 16 }, { MUT_NECRO_ENHANCER, 1, 24 }, },
+    {"You deal more damage when using scythes."},
+    {},
+    { JOB_WARPER, JOB_FIGHTER, JOB_GLADIATOR,
+      JOB_ENCHANTER, JOB_CONJURER, JOB_VENOM_MAGE, JOB_NECROMANCER, JOB_ICE_ELEMENTALIST },
+    { SK_POLEARMS, SK_CROSSBOWS, SK_AXES },
+} },
+
 { SP_KOBOLD, {
     "Ko",
     "Kobold", nullptr, nullptr,
