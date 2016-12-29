@@ -724,10 +724,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
         // stelt vector voor van richting aanval
         coord_def atk_vector = def - atk;
 
-        printf("att: %i %i\n", atk.x, atk.y);
-        printf("def: %i %i\n", def.x, def.y);
-        printf("vec: %i %i\n", atk_vector.x, atk_vector.y);
-
         // If player is a wraith with a scythe
         if(attacker.as_player()->species == SP_WRAITH && attacker.as_player()->wearing(EQ_WEAPON, WPN_SCYTHE)){
             // Pos of attacker
@@ -742,7 +738,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
             // 3 cases: kruis/diagonaal/wonky rare stuff
             // kruis up/down
             if(atk_vector.x == 0){
-                printf("cross up/down\n");
                 actor *target1 = actor_at(def + coord_def(1,0));
                 if (target1 && !_dont_harm(attacker, *target1))
                     targets.push_back(target1);
@@ -752,7 +747,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
             }
             // kruis links/rechts
             else if(atk_vector.y == 0){
-                printf("cross links/rechts\n");
                 actor *target1 = actor_at(def + coord_def(0,1));
                 if (target1 && !_dont_harm(attacker, *target1))
                     targets.push_back(target1);
@@ -766,7 +760,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                 if(atk_vector.x < 0){
                     // down
                     if(atk_vector.y > 0){
-                        printf("diag links/down\n");
                         actor *target1 = actor_at(def + coord_def(1,0));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -776,7 +769,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                     }
                     // up
                     else{
-                        printf("diag links/up\n");
                         actor *target1 = actor_at(def + coord_def(1,0));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -789,7 +781,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                 else{
                     // down (fkin backwards NOTE !!!)
                     if(atk_vector.y > 0){
-                        printf("diag rechts/down\n");
                         actor *target1 = actor_at(def + coord_def(-1,0));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -799,7 +790,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                     }
                     // up
                     else{
-                        printf("diag rechts/up\n");
                         actor *target1 = actor_at(def + coord_def(-1,0));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -815,14 +805,12 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                 if(atk_vector.y == 2){
                     // links
                     if(atk_vector.x<0){
-                        printf("s 2UL\n");
                         actor *target2 = actor_at(atk + coord_def(-2,1));
                         if (target2 && !_dont_harm(attacker, *target2))
                             targets.push_back(target2);
                     }
                     // rechts
                     else{
-                        printf("s 2UR\n");
                         actor *target2 = actor_at(atk + coord_def(2,1));
                         if (target2 && !_dont_harm(attacker, *target2))
                             targets.push_back(target2);
@@ -835,7 +823,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                 if(atk_vector.y == 1){
                     // links
                     if(atk_vector.x<0){
-                        printf("s 1UL\n");
                         actor *target1 = actor_at(atk + coord_def(-1,2));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -845,7 +832,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                     }
                     // rechts
                     else{
-                        printf("s 1UR\n");
                         actor *target2 = actor_at(atk + coord_def(1,2));
                         if (target2 && !_dont_harm(attacker, *target2))
                             targets.push_back(target2);
@@ -858,7 +844,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                 if(atk_vector.y == -1){
                     // links
                     if(atk_vector.x<0){
-                        printf("s 1DL\n");
                         actor *target1 = actor_at(atk + coord_def(-1,-2));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -868,7 +853,6 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                     }
                     // rechts
                     else{
-                        printf("s 1DR\n");
                         actor *target1 = actor_at(atk + coord_def(1,-2));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
@@ -881,14 +865,12 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
                 if(atk_vector.y == -2){
                     // links
                     if(atk_vector.x<0){
-                        printf("s 2DL\n");
                         actor *target1 = actor_at(atk + coord_def(-2,-1));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
                     }
                     // rechts
                     else{
-                        printf("s 2DR\n");
                         actor *target1 = actor_at(atk + coord_def(2,-1));
                         if (target1 && !_dont_harm(attacker, *target1))
                             targets.push_back(target1);
