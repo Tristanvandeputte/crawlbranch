@@ -271,7 +271,12 @@ int attack::calc_to_hit(bool random)
                     // sub 20% -> +40% dmg (execute)
                     int temp = 100-monster_percent_hp;
                     int min_percent_damage = 80;
-                    mhit += ((min_percent_damage+temp/2)/100);
+                    if(monster_percent_hp<20){
+                        mhit *= 1.4;
+                    }
+                    else{
+                        mhit *= ((min_percent_damage+temp/2)/100);
+                    }
                 }
             }
 
