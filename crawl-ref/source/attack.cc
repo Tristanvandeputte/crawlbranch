@@ -229,7 +229,6 @@ int attack::calc_to_hit(bool random)
             }
         }
 
-
         // slaying bonus
         mhit += slaying_bonus(wpn_skill == SK_THROWING
                               || (weapon && is_range_weapon(*weapon)
@@ -249,6 +248,32 @@ int attack::calc_to_hit(bool random)
         // mutation
         if (player_mutation_level(MUT_EYEBALLS))
             mhit += 2 * player_mutation_level(MUT_EYEBALLS) + 1;
+            // Gojan do more/less dmg based off weapon/enemy hp
+            if(attacker->as_player()->species == SP_GOJAN){
+                int monster_percent_hp = (defender->as_monster()->hit_points*100)/(defender->as_monster()->max_hit_points);
+                if(attacker->as_player()->wearing(EQ_WEAPON, WPN_TRIPLE_CROSSBOW) ||
+                        attacker->as_player()->wearing(EQ_WEAPON, WPN_ARBALEST) ||
+                        attacker->as_player()->wearing(EQ_WEAPON, WPN_HAND_CROSSBOW)){
+                    if(monster_percent_hp == 100){
+                        mhit += attacker->as_player()->experience_level+5;
+                    }
+                    // 20% dmg drop
+                    else{
+                        mhit *= 0.8;
+                    }
+                }
+                else if(attacker->as_player()->wearing(EQ_WEAPON, WPN_LONG_SWORD) ||
+                        attacker->as_player()->wearing(EQ_WEAPON, WPN_FALCHION) ||
+                        attacker->as_player()->wearing(EQ_WEAPON, WPN_SCIMITAR) ||
+                        attacker->as_player()->wearing(EQ_WEAPON, WPN_LONG_SWORD)){
+                    // Dmg based off monsters hp
+                    // -20% -> +20% from 100%->20% hp
+                    // sub 20% -> +40% dmg (execute)
+                    int temp = 100-monster_percent_hp;
+                    int min_percent_damage = 80;
+                    mhit += ((min_percent_damage+temp/2)/100);
+                }
+            }
 
         // hit roll
         mhit = maybe_random2(mhit, random);

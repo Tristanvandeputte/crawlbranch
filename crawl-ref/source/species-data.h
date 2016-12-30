@@ -562,6 +562,41 @@ static const map<species_type, species_def> species_data =
     { SK_POLEARMS, SK_CROSSBOWS, SK_AXES },
 } },
 
+{ SP_ELEPHANT_SLUG, {
+    "Sl",
+    "Elephant Slug", nullptr, nullptr,
+    SPF_NONE,
+    0, 4, 2, 5,
+    MONS_ELEPHANT_SLUG,
+    HT_LAND, US_ALIVE, SIZE_LARGE,
+    12, 14, 8, // 34
+    { STAT_STR, STAT_INT }, 4,
+    { { MUT_SLOW, 3, 1 }, { MUT_GELATINOUS_BODY, 2, 1 }, { MUT_SLOW_METABOLISM, 1, 1 }
+    , { MUT_ACIDIC_BITE, 1, 1 },  },
+    {},
+    {},
+    { JOB_TRANSMUTER,
+      JOB_SUMMONER, JOB_CONJURER, JOB_VENOM_MAGE, JOB_EARTH_ELEMENTALIST, JOB_AIR_ELEMENTALIST },
+    { SK_UNARMED_COMBAT },
+} },
+
+{ SP_GOJAN, {
+    "Go",
+    "Gojan", nullptr, nullptr,
+    SPF_NONE,
+    0, -1, 0, 3,
+    MONS_SPRIGGAN_DEFENDER,
+    HT_LAND, US_ALIVE, SIZE_LITTLE,
+    7, 7, 10, // 34
+    { STAT_STR, STAT_DEX }, 4,
+    { { MUT_CAMOUFLAGE, 1, 1 }, { MUT_CLARITY, 1, 1 } },
+    {"Attacking with a crossbow deals more damage to full health enemies",
+     "Attacking with a longsword does more damage to low health enemies"},
+    {},
+    { JOB_HUNTER },
+    { SK_CROSSBOWS, SK_LONG_BLADES },
+} },
+
 { SP_KOBOLD, {
     "Ko",
     "Kobold", nullptr, nullptr,

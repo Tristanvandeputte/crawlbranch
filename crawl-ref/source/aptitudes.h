@@ -12,6 +12,84 @@ static inline species_skill_aptitude APT(species_type sp,
 
 static const species_skill_aptitude species_skill_aptitudes[] =
 {
+    // SP_GOJAN
+    APT(SP_GOJAN,           SK_FIGHTING,        1),
+    APT(SP_GOJAN,           SK_SHORT_BLADES,    1),
+    APT(SP_GOJAN,           SK_LONG_BLADES,     2),
+    APT(SP_GOJAN,           SK_AXES,            -2),
+    APT(SP_GOJAN,           SK_MACES_FLAILS,    -2),
+    APT(SP_GOJAN,           SK_POLEARMS,        -2),
+    APT(SP_GOJAN,           SK_STAVES,          -1),
+    APT(SP_GOJAN,           SK_SLINGS,          1),
+    APT(SP_GOJAN,           SK_BOWS,            0),
+    APT(SP_GOJAN,           SK_CROSSBOWS,       4),
+    APT(SP_GOJAN,           SK_THROWING,        -1),
+    APT(SP_GOJAN,           SK_ARMOUR,          -1),
+    APT(SP_GOJAN,           SK_DODGING,         4),
+    APT(SP_GOJAN,           SK_STEALTH,         5),
+#if TAG_MAJOR_VERSION == 34
+    APT(SP_GOJAN,           SK_STABBING,      UNUSABLE_SKILL),
+#endif
+    APT(SP_GOJAN,           SK_SHIELDS,         -1),
+#if TAG_MAJOR_VERSION == 34
+    APT(SP_GOJAN,           SK_TRAPS,         UNUSABLE_SKILL),
+#endif
+    APT(SP_GOJAN,           SK_UNARMED_COMBAT,  -1),
+    APT(SP_GOJAN,           SK_SPELLCASTING,    1),
+    APT(SP_GOJAN,           SK_CONJURATIONS,    -1),
+    APT(SP_GOJAN,           SK_HEXES,           -1),
+    APT(SP_GOJAN,           SK_CHARMS,          -1),
+    APT(SP_GOJAN,           SK_SUMMONINGS,      0),
+    APT(SP_GOJAN,           SK_NECROMANCY,      0),
+    APT(SP_GOJAN,           SK_TRANSLOCATIONS,  1),
+    APT(SP_GOJAN,           SK_TRANSMUTATIONS,  0),
+    APT(SP_GOJAN,           SK_FIRE_MAGIC,      0),
+    APT(SP_GOJAN,           SK_ICE_MAGIC,       0),
+    APT(SP_GOJAN,           SK_AIR_MAGIC,       0),
+    APT(SP_GOJAN,           SK_EARTH_MAGIC,     0),
+    APT(SP_GOJAN,           SK_POISON_MAGIC,    0),
+    APT(SP_GOJAN,           SK_INVOCATIONS,     1),
+    APT(SP_GOJAN,           SK_EVOCATIONS,      4),
+
+    // SP_ELEPHANT_SLUG (gastronok's buddy)
+    APT(SP_ELEPHANT_SLUG,           SK_FIGHTING,         1),
+    APT(SP_ELEPHANT_SLUG,           SK_SHORT_BLADES,     UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_LONG_BLADES,      UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_AXES,             UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_MACES_FLAILS,     UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_POLEARMS,         UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_STAVES,           UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_SLINGS,           UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_BOWS,             UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_CROSSBOWS,        UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_THROWING,         UNUSABLE_SKILL),
+    APT(SP_ELEPHANT_SLUG,           SK_ARMOUR,           -2),
+    APT(SP_ELEPHANT_SLUG,           SK_DODGING,          -3),
+    APT(SP_ELEPHANT_SLUG,           SK_STEALTH,           3),
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_ELEPHANT_SLUG,           SK_STABBING,      UNUSABLE_SKILL),
+    #endif
+    APT(SP_ELEPHANT_SLUG,           SK_SHIELDS,          UNUSABLE_SKILL), // extra schythe bonus w/o shield? mb AoE?
+    #if TAG_MAJOR_VERSION == 34
+    APT(SP_ELEPHANT_SLUG,           SK_TRAPS,         UNUSABLE_SKILL),
+    #endif
+    APT(SP_ELEPHANT_SLUG,           SK_UNARMED_COMBAT,   0),
+    APT(SP_ELEPHANT_SLUG,           SK_SPELLCASTING,     3),
+    APT(SP_ELEPHANT_SLUG,           SK_CONJURATIONS,     2),
+    APT(SP_ELEPHANT_SLUG,           SK_HEXES,            2),
+    APT(SP_ELEPHANT_SLUG,           SK_CHARMS,           2),
+    APT(SP_ELEPHANT_SLUG,           SK_SUMMONINGS,       2),
+    APT(SP_ELEPHANT_SLUG,           SK_NECROMANCY,       0),
+    APT(SP_ELEPHANT_SLUG,           SK_TRANSLOCATIONS,   1),
+    APT(SP_ELEPHANT_SLUG,           SK_TRANSMUTATIONS,   1),
+    APT(SP_ELEPHANT_SLUG,           SK_FIRE_MAGIC,       1),
+    APT(SP_ELEPHANT_SLUG,           SK_ICE_MAGIC,        2),
+    APT(SP_ELEPHANT_SLUG,           SK_AIR_MAGIC,        1),
+    APT(SP_ELEPHANT_SLUG,           SK_EARTH_MAGIC,      2),
+    APT(SP_ELEPHANT_SLUG,           SK_POISON_MAGIC,     2),
+    APT(SP_ELEPHANT_SLUG,           SK_INVOCATIONS,      1),
+    APT(SP_ELEPHANT_SLUG,           SK_EVOCATIONS,       1),
+
     // SP_WRAITH (the grim fkin reaper)
     APT(SP_WRAITH,           SK_FIGHTING,         1),
     APT(SP_WRAITH,           SK_SHORT_BLADES,     0),

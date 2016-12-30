@@ -1312,6 +1312,17 @@ TILE_EQ: finisher
 BRAND:   SPWPN_REAPING
 VALUE:   1000
 
+NAME:     Silencer
+OBJ:      OBJ_WEAPONS/WPN_ARBALEST
+PLUS:     +8
+COLOUR:   ETC_DARK
+TILE:     urand_damnation
+TILE_EQ:  crossbow_fire
+BRAND:    SPWPN_ANTIMAGIC
+BOOL:     skip_ego
+MAGIC:    2
+STEALTH:  1
+
 # This entry must always be last.
 ENUM:   DUMMY2
 NAME:   DUMMY UNRANDART 2

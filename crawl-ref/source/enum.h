@@ -4264,6 +4264,8 @@ enum species_type
     SP_BEHOLDER,
     SP_REVENANT,
     SP_WRAITH,
+    SP_ELEPHANT_SLUG,
+    SP_GOJAN,
     NUM_SPECIES,
 
     SP_UNKNOWN  = 100,

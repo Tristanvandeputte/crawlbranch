@@ -351,6 +351,11 @@ bool can_wield(const item_def *weapon, bool say_reason,
         return false;
     }
 
+    if (you.species == SP_ELEPHANT_SLUG){
+        SAY(mpr("The item slides off you!"));
+        return false;
+    }
+
     if (player_mutation_level(MUT_MISSING_HAND)
             && you.hands_reqd(*weapon) == HANDS_TWO)
     {
@@ -722,6 +727,13 @@ bool can_wear_armour(const item_def &item, bool verbose, bool ignore_temporary)
     const equipment_type slot = get_armour_slot(item);
 
     if ((you.species == SP_OCTOPODE || you.species == SP_BEHOLDER) && slot != EQ_HELMET && slot != EQ_SHIELD)
+    {
+        if (verbose)
+            mpr("You can't wear that!");
+        return false;
+    }
+
+    if ((you.species == SP_ELEPHANT_SLUG) && slot != EQ_HELMET)
     {
         if (verbose)
             mpr("You can't wear that!");

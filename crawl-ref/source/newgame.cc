@@ -164,7 +164,7 @@ static const species_type species_order[] =
     SP_DEEP_DWARF,     SP_HILL_ORC, SP_MORPH,
     // small species
     SP_HALFLING,       SP_KOBOLD,
-    SP_SPRIGGAN,
+    SP_SPRIGGAN,       SP_GOJAN,
     // large species
     SP_OGRE,           SP_TROLL,
     // significantly different body type from human ("monstrous")
@@ -180,7 +180,7 @@ static const species_type species_order[] =
     SP_MUMMY,          SP_GHOUL,
     SP_VAMPIRE,        SP_REVENANT,     SP_WRAITH,
     // not humanoid at all
-    SP_FELID,          SP_OCTOPODE, SP_BEHOLDER,
+    SP_FELID,          SP_OCTOPODE, SP_BEHOLDER, SP_ELEPHANT_SLUG,
 };
 COMPILE_CHECK(ARRAYSZ(species_order) <= NUM_SPECIES);
 
